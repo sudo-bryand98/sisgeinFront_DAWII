@@ -1,0 +1,28 @@
+<p>listar-encargado works!</p>
+
+<button (click)="nuevo()" class="btn btn-warning">Agregar</button>
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let encargado of encargados">
+            <td>{{encargado.ide}}</td>
+            <td>{{encargado.nombre}}</td>
+            <td>{{encargado.apellidos}}</td>
+            <td>{{encargado.cel}}</td>
+            <td>{{encargado.correo}}</td>
+            <td>
+                <button (click)="editar(encargado)" class="btn btn-warning">Editar</button>
+                <button (click)="eliminar(encargado)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
