@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListarEncargadoComponent } from './componentes/encargado/listar-encargado/listar-encargado.component';
+import { HttpClientModule } from "@angular/common/http"
+import { FormsModule } from '@angular/forms';
+import { AddEncargadoComponent } from './componentes/encargado/add-encargado/add-encargado.component';
+import { EditEncargadoComponent } from './componentes/encargado/edit-encargado/edit-encargado.component';
 import { ListarCategoriaComponent } from './componentes/categoria/listar-categoria/listar-categoria.component';
 import { HttpClientModule} from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
@@ -22,6 +27,9 @@ import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
+    ListarEncargadoComponent,
+    AddEncargadoComponent,
+    EditEncargadoComponent,
     ListarCategoriaComponent,
     NavigationComponent,
     DashboardComponent
@@ -30,6 +38,7 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
