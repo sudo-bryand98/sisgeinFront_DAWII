@@ -1,0 +1,17 @@
+<p>listar-categoria works!</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Categoría</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let categoria of categorias">
+            <td>{{categoria.id}}</td>
+            <td>{{categoria.nombreCat}}</td>
+        </tr>
+    </tbody>
+
+</table>
