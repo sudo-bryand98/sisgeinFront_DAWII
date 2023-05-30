@@ -12,7 +12,7 @@ export class ListarEncargadoComponent implements OnInit {
 
   encargados?:Encargado[];
 
-  constructor(private encargadoService:EncargadoService, private router:Router) { }
+  constructor( private encargadoService:EncargadoService, private router:Router ) { }
 
   ngOnInit(): void {
     this.encargadoService.getEncargados().subscribe(
@@ -27,8 +27,9 @@ export class ListarEncargadoComponent implements OnInit {
   }
 
   nuevo():void{
-    this.router.navigate(['nuevoEncargado']);
+    this.router.navigate(['nuevoEncargado'])
   }
+  
   editar(encargado:Encargado):void{
     localStorage.setItem("ide",encargado.ide.toString());
     this.router.navigate(['editarEncargado']);

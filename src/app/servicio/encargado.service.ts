@@ -23,7 +23,7 @@ export class EncargadoService {
   }
 
   updateEncargado(encargado:Encargado){
-    return this.http.put<Encargado>(this.url,encargado);
+    return this.http.put<Encargado>(this.url, encargado);
   }
 
   deleteEncargado(encargado:Encargado){
