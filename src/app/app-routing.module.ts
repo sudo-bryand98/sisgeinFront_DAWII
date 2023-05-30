@@ -11,6 +11,8 @@ const routes: Routes = [
   {path: 'nuevoEncargado', component:AddEncargadoComponent},
   {path: 'editarEncargado', component:EditEncargadoComponent},
   {path: 'categorias', component:ListarCategoriaComponent},
+  {path: 'nuevaCategoria', component:AddCategoriaComponent},
+  {path: 'editarCategoria', component:EditCategoriaComponent},
   {path: 'dash', component:DashboardComponent}
 
 ];

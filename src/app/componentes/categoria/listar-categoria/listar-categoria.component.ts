@@ -27,4 +27,19 @@ export class ListarCategoriaComponent implements OnInit {
     );
   }
 
+  nuevaC():void{
+    this.router.navigate(['nuevaCategoria'])
+  }
+  
+  editarC(categoria:Categoria):void{
+    localStorage.setItem("id",categoria.id.toString());
+    this.router.navigate(['editarCategoria']);
+  }
+
+  eliminarC(categoria:Categoria):void{
+    this.categoriaService.deleteCategoria(categoria).subscribe(data=>{
+      this.categorias=this.categorias!.filter(e=>e!==categoria);
+    });
+  }
+
 }
