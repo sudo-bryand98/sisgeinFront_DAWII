@@ -5,6 +5,8 @@ import { AddEncargadoComponent } from './componentes/encargado/add-encargado/add
 import { EditEncargadoComponent } from './componentes/encargado/edit-encargado/edit-encargado.component';
 import { ListarCategoriaComponent } from './componentes/categoria/listar-categoria/listar-categoria.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add-categoria.component';
+import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/edit-categoria.component';
 
 const routes: Routes = [
   {path: 'encargados', component:ListarEncargadoComponent},

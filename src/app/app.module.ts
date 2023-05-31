@@ -21,6 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/edit-categoria.component';
+import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add-categoria.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatMenuModule } from '@angular/material/menu';
     EditEncargadoComponent,
     ListarCategoriaComponent,
     NavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddCategoriaComponent,
+    EditCategoriaComponent
   ],
   imports: [
     BrowserModule,
