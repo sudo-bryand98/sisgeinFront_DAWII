@@ -23,6 +23,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/edit-categoria.component';
 import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add-categoria.component';
+import { ListarAlmacenComponent } from './componentes/almacen/listar-almacen/listar-almacen.component';
+import { AddAlmacenComponent } from './componentes/almacen/add-almacen/add-almacen.component';
+import { EditAlmacenComponent } from './componentes/almacen/edit-almacen/edit-almacen.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add
     NavigationComponent,
     DashboardComponent,
     AddCategoriaComponent,
-    EditCategoriaComponent
+    EditCategoriaComponent,
+    ListarAlmacenComponent,
+    AddAlmacenComponent,
+    EditAlmacenComponent
   ],
   imports: [
     BrowserModule,
