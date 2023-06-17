@@ -1,3 +1,4 @@
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -5,7 +6,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item>Categorías</a>
+      <a routerLink="categorias" mat-list-item>Categorías</a>
       <a mat-list-item>Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
@@ -22,5 +23,10 @@
       </button>
       <span>SiSGEIN</span>
     </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
