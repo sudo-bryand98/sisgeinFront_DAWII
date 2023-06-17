@@ -1,0 +1,25 @@
+<p>listar-almacen works!</p>
+<button (click)="nuevo()" class="btn btn-warning"> Agregar</button>
+
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Encargado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let almacen of almacen">
+            <td>{{almacen.idal}}</td>
+            <td>{{almacen.nombalm}}</td>
+            <td>{{almacen.direccion}}</td>
+            <td>{{almacen.encargado.nombre}}</td>
+            <td>
+                <button (click)="editar(almacen)" class="btn btn-warning">Editar</button>
+                <button (click)="eliminar(almacen)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

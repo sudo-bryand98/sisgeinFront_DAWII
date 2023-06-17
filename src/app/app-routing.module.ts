@@ -7,6 +7,12 @@ import { ListarCategoriaComponent } from './componentes/categoria/listar-categor
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add-categoria.component';
 import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/edit-categoria.component';
+import { ListarAlmacenComponent } from './componentes/almacen/listar-almacen/listar-almacen.component';
+import { AddAlmacenComponent } from './componentes/almacen/add-almacen/add-almacen.component';
+import { EditAlmacenComponent } from './componentes/almacen/edit-almacen/edit-almacen.component';
+
+
+
 
 const routes: Routes = [
   {path: 'encargados', component:ListarEncargadoComponent},
@@ -15,6 +21,9 @@ const routes: Routes = [
   {path: 'categorias', component:ListarCategoriaComponent},
   {path: 'nuevaCategoria', component:AddCategoriaComponent},
   {path: 'editarCategoria', component:EditCategoriaComponent},
+  {path: 'almacen', component:ListarAlmacenComponent},
+  {path: 'nuevoAlmacen', component:AddAlmacenComponent},
+  {path: 'editarAlmacen', component:EditAlmacenComponent},
   {path: 'dash', component:DashboardComponent}
 
 ];

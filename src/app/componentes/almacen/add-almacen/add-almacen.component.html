@@ -1,0 +1,28 @@
+<p>add-almacen works!</p>
+<div class="container col-md-6">
+
+    <div class="card-header">
+        <h3> Agregar Almacen</h3>
+    </div>
+
+    <div class="card-body">
+        <form action="">
+            <div class="form-group">
+                <label for="">Nombres:</label>
+                <input type="text" [(ngModel)]="modelAlmacen.nombalm" name="nombalm" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="">Direccion:</label>
+                <input type="text" [(ngModel)]="modelAlmacen.direccion"  name="direccion" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="">Encargado:</label>
+                <input type="text" [(ngModel)]="modelAlmacen.encargado.ide" name="ide" class="form-control">
+            </div>
+
+            <button (click)="guardar(modelAlmacen)" class="btn btn-danger">Guardar</button>
+        </form>
+    </div>
+</div>
