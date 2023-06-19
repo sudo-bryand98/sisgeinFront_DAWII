@@ -26,6 +26,9 @@ import { AddCategoriaComponent } from './componentes/categoria/add-categoria/add
 import { ListarAlmacenComponent } from './componentes/almacen/listar-almacen/listar-almacen.component';
 import { AddAlmacenComponent } from './componentes/almacen/add-almacen/add-almacen.component';
 import { EditAlmacenComponent } from './componentes/almacen/edit-almacen/edit-almacen.component';
+import { ListarProductoComponent } from './componentes/producto/listar-producto/listar-producto.component';
+import { AddProductoComponent } from './componentes/producto/add-producto/add-producto.component';
+import { EditProductoComponent } from './componentes/producto/edit-producto/edit-producto.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { EditAlmacenComponent } from './componentes/almacen/edit-almacen/edit-al
     EditCategoriaComponent,
     ListarAlmacenComponent,
     AddAlmacenComponent,
-    EditAlmacenComponent
+    EditAlmacenComponent,
+    ListarProductoComponent,
+    AddProductoComponent,
+    EditProductoComponent
   ],
   imports: [
     BrowserModule,
