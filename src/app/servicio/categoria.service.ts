@@ -8,26 +8,26 @@ import { Categoria } from '../modelos/Categoria';
 export class CategoriaService {
 
   constructor(private http:HttpClient) { }
-  url = 'http://localhost:8080/api/categorias';
+  // url = 'http://localhost:8080/api/categorias';
 
-  getCategorias(){
-    return this.http.get<Categoria[]>(this.url);
-  }
+  // getCategorias(){
+  //   return this.http.get<Categoria[]>(this.url);
+  // }
 
-  createCategoria(categoria:Categoria){
-    return this.http.post<Categoria>(this.url,categoria);
-  }
+  // createCategoria(categoria:Categoria){
+  //   return this.http.post<Categoria>(this.url,categoria);
+  // }
 
-  getCategoriaId(id:number){
-    return this.http.get<Categoria>(this.url+"/"+id);
-  }
+  // getCategoriaId(id:number){
+  //   return this.http.get<Categoria>(this.url+"/"+id);
+  // }
 
-  updateCategoria(categoria:Categoria){
-    return this.http.put<Categoria>(this.url, categoria);
-  }
+  // updateCategoria(categoria:Categoria){
+  //   return this.http.put<Categoria>(this.url, categoria);
+  // }
 
-  deleteCategoria(categoria:Categoria){
-    return this.http.delete<Categoria>(this.url+"/"+categoria.id);
-  }
+  // deleteCategoria(categoria:Categoria){
+  //   return this.http.delete<Categoria>(this.url+"/"+categoria.id);
+  // }
 
 }
