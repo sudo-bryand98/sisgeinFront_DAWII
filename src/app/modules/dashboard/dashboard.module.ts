@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryModule } from '../category/category.module';
 import { EncargadoModule } from '../encargado/encargado.module';
+import { ProductoModule } from '../producto/producto.module';
+import { AlmacenModule } from '../almacen/almacen.module';
 
 
 
@@ -18,7 +20,9 @@ import { EncargadoModule } from '../encargado/encargado.module';
     CommonModule,
     SharedModule,
     CategoryModule,
-    EncargadoModule
+    EncargadoModule,
+    ProductoModule,
+    AlmacenModule
   ]
 })
 export class DashboardModule { }
