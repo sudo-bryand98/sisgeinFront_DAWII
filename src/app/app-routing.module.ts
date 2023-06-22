@@ -10,6 +10,9 @@ import { EditCategoriaComponent } from './componentes/categoria/edit-categoria/e
 import { ListarAlmacenComponent } from './componentes/almacen/listar-almacen/listar-almacen.component';
 import { AddAlmacenComponent } from './componentes/almacen/add-almacen/add-almacen.component';
 import { EditAlmacenComponent } from './componentes/almacen/edit-almacen/edit-almacen.component';
+import { ListarProductoComponent } from './componentes/producto/listar-producto/listar-producto.component';
+import { AddProductoComponent } from './componentes/producto/add-producto/add-producto.component';
+import { EditProductoComponent } from './componentes/producto/edit-producto/edit-producto.component';
 
 
 
@@ -24,6 +27,9 @@ const routes: Routes = [
   {path: 'almacen', component:ListarAlmacenComponent},
   {path: 'nuevoAlmacen', component:AddAlmacenComponent},
   {path: 'editarAlmacen', component:EditAlmacenComponent},
+  {path: 'productos', component:ListarProductoComponent},
+  {path: 'nuevoProducto', component:AddProductoComponent},
+  {path: 'editarProducto', component:EditProductoComponent},
   {path: 'dash', component:DashboardComponent}
 
 ];
