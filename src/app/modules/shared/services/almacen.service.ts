@@ -27,4 +27,9 @@ export class AlmacenService {
     return this.http.put(endpoint, body);
   }
 
+  deleteAlmacen(idal: any){
+    const endpoint = `${base_url}/almacenes/ ${idal}`;
+    return this.http.delete(endpoint);
+  }
+
 }

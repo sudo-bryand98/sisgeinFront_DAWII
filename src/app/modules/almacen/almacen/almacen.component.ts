@@ -5,6 +5,7 @@ import { AlmacenService } from '../../shared/services/almacen.service';
 import { NewAlmacenComponent } from '../new-almacen/new-almacen.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
+import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
 
 @Component({
   selector: 'app-almacen',
@@ -87,6 +88,22 @@ export class AlmacenComponent implements OnInit {
           this.getAlmacenes();
       } else if(result == 2){
         this.openSnackBar("Se produjo un error al editar almacén", "Error");
+      }
+    });
+  }
+
+  delete(idal: any){
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '450px',
+      data: {idal: idal, module: "almacen"}
+    });
+
+    dialogRef.afterClosed().subscribe((result:any) => {
+      if(result == 1){
+          this.openSnackBar("Almacén eliminado", "Exito");
+          this.getAlmacenes();
+      } else if(result == 2){
+        this.openSnackBar("Se produjo un error al eliminar almacén", "Error");
       }
     });
   }
