@@ -32,4 +32,9 @@ export class AlmacenService {
     return this.http.delete(endpoint);
   }
 
+  getAlmacenById(idal: any){
+    const endpoint = `${base_url}/almacenes/ ${idal}`;
+    return this.http.get(endpoint);
+  }
+
 }

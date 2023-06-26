@@ -108,6 +108,17 @@ export class AlmacenComponent implements OnInit {
     });
   }
 
+  buscar(termino: string){
+    if(termino.length === 0){
+      return this.getAlmacenes();
+    }
+
+    this.almacenService.getAlmacenById(termino)
+      .subscribe( (resp: any) => {
+        this.processAlmacenResponse(resp);
+      })
+  }
+
 }
 
 export interface AlmacenElement{
