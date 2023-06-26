@@ -106,6 +106,17 @@ export class ProductoComponent implements OnInit {
     });
   }
 
+  buscar(termino: string){
+    if(termino.length === 0){
+      return this.getProductos();
+    }
+
+    this.productoService.getProductoById(termino)
+      .subscribe( (resp: any) => {
+        this.processProductosResponse(resp);
+      })
+  }
+
 }
 
 export interface ProductoElement{

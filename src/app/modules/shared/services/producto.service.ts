@@ -31,4 +31,9 @@ export class ProductoService {
     return this.http.delete(endpoint);
   }
 
+  getProductoById(idp: any){
+    const endpoint = `${base_url}/productos/ ${idp}`;
+    return this.http.get(endpoint);
+  }
+
 }
