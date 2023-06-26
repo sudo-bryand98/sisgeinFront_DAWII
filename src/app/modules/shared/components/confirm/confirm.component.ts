@@ -4,6 +4,7 @@ import { error } from 'console';
 import { CategoryService } from '../../services/category.service';
 import { EncargadoService } from '../../services/encargado.service';
 import { AlmacenService } from '../../services/almacen.service';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-confirm',
@@ -14,7 +15,7 @@ export class ConfirmComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<ConfirmComponent>,
               @Inject (MAT_DIALOG_DATA) public data:any, private categoryService: CategoryService,
-              private encargadoService: EncargadoService, private almacenService: AlmacenService) { }
+              private encargadoService: EncargadoService, private almacenService: AlmacenService, private productoService: ProductoService) { }
 
   ngOnInit(): void {
   }
@@ -41,6 +42,12 @@ export class ConfirmComponent implements OnInit {
         })
       } else if(this.data.module == "almacen"){
         this.almacenService.deleteAlmacen(this.data.idal).subscribe((data:any) =>{
+          this.dialogRef.close(1);
+        }, (error: any) => {
+          this.dialogRef.close(2);
+        })
+      } else if(this.data.module == "producto"){
+        this.productoService.deleteProducto(this.data.idp).subscribe((data:any) =>{
           this.dialogRef.close(1);
         }, (error: any) => {
           this.dialogRef.close(2);
