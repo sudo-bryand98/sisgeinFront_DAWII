@@ -43,6 +43,11 @@ export class NewProductoComponent implements OnInit {
         categoria: ['', Validators.required]
       })
 
+      if(data != null){
+        this.updateForm(data);
+        this.estadoFormulario = "Actualizar";
+      }
+
      }
 
   ngOnInit(): void {
@@ -65,12 +70,23 @@ export class NewProductoComponent implements OnInit {
     uploadData.append('idal', data.idal);
     uploadData.append('id', data.id);
 
-    this.productoService.saveProductos(uploadData)
-      .subscribe((data:any) =>{
-        this.dialogRef.close(1);
-      }, (error: any) =>{
-        this.dialogRef.close(2);
-      })
+    if(this.data != null){
+      //actualizar el producto
+      this.productoService.updateProducto(uploadData, this.data.idp)
+        .subscribe((data:any) =>{
+          this.dialogRef.close(1);
+        }, (error: any) =>{
+          this.dialogRef.close(2);
+        })
+    } else{
+      // registrar el producto
+      this.productoService.saveProductos(uploadData)
+        .subscribe((data:any) =>{
+          this.dialogRef.close(1);
+        }, (error: any) =>{
+          this.dialogRef.close(2);
+        })
+    }
   }
 
   onCancel(){
@@ -93,6 +109,15 @@ export class NewProductoComponent implements OnInit {
         }, (error:any) =>{
           console.log("error al consultar almacenes");
         })
+  }
+
+  updateForm(data: any){
+    this.ProductoForm = this.fb.group({
+      nombrep: [data.nombrep, Validators.required],
+      stock: [data.stock , Validators.required],
+      almacen: [data.almacen.idal, Validators.required],
+      categoria: [data.categoria.id, Validators.required]
+    })
   }
 
 }
