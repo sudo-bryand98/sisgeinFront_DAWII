@@ -16,4 +16,9 @@ export class ProductoService {
     return this.http.get(endpoint);
   }
 
+  saveProductos(body: any){
+    const endpoint = `${base_url}/productos`;
+    return this.http.post(endpoint, body);
+  }
+
 }
