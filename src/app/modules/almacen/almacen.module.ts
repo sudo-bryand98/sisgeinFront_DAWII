@@ -4,12 +4,14 @@ import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlmacenComponent } from './almacen/almacen.component';
+import { NewAlmacenComponent } from './new-almacen/new-almacen.component';
 
 
 
 @NgModule({
   declarations: [
-    AlmacenComponent
+    AlmacenComponent,
+    NewAlmacenComponent
   ],
   imports: [
     CommonModule,

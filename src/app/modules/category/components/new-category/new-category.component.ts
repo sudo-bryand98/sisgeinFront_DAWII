@@ -12,11 +12,13 @@ import { CategoryService } from 'src/app/modules/shared/services/category.servic
 export class NewCategoryComponent implements OnInit {
 
   public categoryForm: FormGroup;
+  estadoFormulario: string = "";
 
   constructor(private fb: FormBuilder, private categoryService: CategoryService, private dialogRef: MatDialogRef<NewCategoryComponent>,
                 @Inject(MAT_DIALOG_DATA) public data:any) { 
 
     console.log(data);
+    this.estadoFormulario = "Agregar";
 
     this.categoryForm = this.fb.group({
         name: ['', Validators.required]    
@@ -24,6 +26,7 @@ export class NewCategoryComponent implements OnInit {
 
     if (data != null){
       this.updateForm(data)
+      this.estadoFormulario = "Actualizar";
     }
 
   }
@@ -33,13 +36,12 @@ export class NewCategoryComponent implements OnInit {
 
   onSave(){
     let data = {
-      id: this.dialogRef.id,
       nombreCat: this.categoryForm.get('name')?.value
     }
 
     if(this.data != null){
       //actualizar registro
-      this.categoryService.updateCategoria(data)
+      this.categoryService.updateCategoria(data, this.data.id)
         .subscribe((data: any) =>{
           this.dialogRef.close(1);
         }, (error:any) =>{

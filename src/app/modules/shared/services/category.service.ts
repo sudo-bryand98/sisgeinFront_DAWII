@@ -24,18 +24,18 @@ export class CategoryService {
     return this.http.post(endpoint, body);
   }
 
-  updateCategoria(body: any){
-    const endpoint = `${base_url}/categorias`;
+  updateCategoria(body: any, id:any){
+    const endpoint = `${base_url}/categorias/ ${id}`;
     return this.http.put(endpoint, body);
   }
 
   deleteCategoria(id: any){
-    const endpoint = `${base_url}/categorias/${id}`;
+    const endpoint = `${base_url}/categorias/ ${id}`;
     return this.http.delete(endpoint);
   }
 
   getCategoriaById(id: any){
-    const endpoint = `${base_url}/categorias/${id}`;
+    const endpoint = `${base_url}/categorias/ ${id}`;
     return this.http.get(endpoint);
   }
   

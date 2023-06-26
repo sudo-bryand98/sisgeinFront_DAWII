@@ -4,7 +4,7 @@
         <div>
             <mat-form-field hintLabel="Busque encargado" appearance="fill">
                 <mat-label>Buscar Encargados</mat-label>
-                <input matInput #input>
+                <input matInput #input (keyup)="buscar(input.value)">
             </mat-form-field>
         </div>
     </mat-card-header>

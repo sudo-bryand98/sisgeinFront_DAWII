@@ -41,13 +41,16 @@ export class EncargadoComponent implements OnInit {
 
   proccesEncargadoResponse(resp:any){
     const dataEncargado: EncargadoElement[] = [];
-    let listEncargado = resp;
-    listEncargado.forEach((element: EncargadoElement) => {
-      dataEncargado.push(element);
-    });
 
-    this.dataSource = new MatTableDataSource<EncargadoElement>(dataEncargado);
-    this.dataSource.paginator = this.paginator;
+    if(resp.metadata[0].code == "00"){
+      let listEncargado = resp.encargadoResponse.encargado;
+      listEncargado.forEach((element: EncargadoElement) => {
+        dataEncargado.push(element);
+      });
+  
+      this.dataSource = new MatTableDataSource<EncargadoElement>(dataEncargado);
+      this.dataSource.paginator = this.paginator;
+    }  
   }
 
   openEncargadoDialog(){
@@ -101,6 +104,17 @@ export class EncargadoComponent implements OnInit {
         this.openSnackBar("Se produjo un error al eliminar el encargado", "Error");
       }
     });
+  }
+
+  buscar(termino: string){
+    if(termino.length === 0){
+      return this.getEncargados();
+    }
+
+    this.encargadoService.getEncargadoById(termino)
+      .subscribe( (resp: any) => {
+        this.proccesEncargadoResponse(resp);
+      })
   }
 
 }

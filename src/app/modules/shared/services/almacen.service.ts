@@ -17,5 +17,14 @@ export class AlmacenService {
     return this.http.get(endpoint);
   }
 
+  saveAlmacenes(body: any){
+    const endpoint = `${base_url}/almacenes`;
+    return this.http.post(endpoint, body);
+  }
+
+  updateAlmacen(body: any, idal: any){
+    const endpoint = `${base_url}/almacenes/ ${idal}`;
+    return this.http.put(endpoint, body);
+  }
 
 }

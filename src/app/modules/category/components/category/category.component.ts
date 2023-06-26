@@ -43,7 +43,9 @@ export class CategoryComponent implements OnInit {
   processCategoriesResponse(resp: any){
     const dataCategory: CategoryElement[] = [];
 
-      let listCategory = resp;
+    if(resp.metadata[0].code == "00"){
+
+      let listCategory = resp.categoriaResponse.categoria;
 
       listCategory.forEach((element: CategoryElement) => {
         dataCategory.push(element);
@@ -51,6 +53,8 @@ export class CategoryComponent implements OnInit {
 
       this.dataSource = new MatTableDataSource<CategoryElement>(dataCategory);
       this.dataSource.paginator = this.paginator;
+
+    }  
   }
 
   openCategoryDialog(){
