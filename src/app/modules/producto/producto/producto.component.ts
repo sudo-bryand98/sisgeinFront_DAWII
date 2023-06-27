@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { NewProductoComponent } from '../new-producto/new-producto.component';
 import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
+import { UtilService } from '../../shared/services/util.service';
 
 @Component({
   selector: 'app-producto',
@@ -14,11 +15,15 @@ import { ConfirmComponent } from '../../shared/components/confirm/confirm.compon
 })
 export class ProductoComponent implements OnInit {
 
+  isAdmin: any;
+
   constructor(private productoService: ProductoService, public dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private util: UtilService) { }
 
   ngOnInit(): void {
     this.getProductos();
+    this.isAdmin = this.util.isAdmin();
   }
 
   displayedColumns: string[] = ['idp', 'nombrep', 'stock', 'almacen', 'categoria','actions'];

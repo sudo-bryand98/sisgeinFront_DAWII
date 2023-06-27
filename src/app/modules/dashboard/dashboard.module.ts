@@ -8,6 +8,9 @@ import { CategoryModule } from '../category/category.module';
 import { EncargadoModule } from '../encargado/encargado.module';
 import { ProductoModule } from '../producto/producto.module';
 import { AlmacenModule } from '../almacen/almacen.module';
+import { MaterialModule } from '../shared/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -22,7 +25,10 @@ import { AlmacenModule } from '../almacen/almacen.module';
     CategoryModule,
     EncargadoModule,
     ProductoModule,
-    AlmacenModule
+    AlmacenModule,
+    MaterialModule,
+    FlexLayoutModule,
+    NgChartsModule
   ]
 })
 export class DashboardModule { }

@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { NewEncargadoComponent } from '../new-encargado/new-encargado.component';
 import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
+import { UtilService } from '../../shared/services/util.service';
 
 @Component({
   selector: 'app-encargado',
@@ -15,11 +16,15 @@ import { ConfirmComponent } from '../../shared/components/confirm/confirm.compon
 })
 export class EncargadoComponent implements OnInit {
 
+  isAdmin: any;
+
   constructor(private encargadoService: EncargadoService,
-    public dialog: MatDialog, private snackBar: MatSnackBar) { }
+    public dialog: MatDialog, private snackBar: MatSnackBar,
+    private util: UtilService) { }
 
   ngOnInit(): void {
     this.getEncargados();
+    this.isAdmin = this.util.isAdmin();
   }
 
   displayedColumns: string[] = ['ide', 'nombre', 'apellidos', 'cel', 'correo', 'actions'];

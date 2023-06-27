@@ -6,6 +6,7 @@ import { NewAlmacenComponent } from '../new-almacen/new-almacen.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
+import { UtilService } from '../../shared/services/util.service';
 
 @Component({
   selector: 'app-almacen',
@@ -14,11 +15,15 @@ import { ConfirmComponent } from '../../shared/components/confirm/confirm.compon
 })
 export class AlmacenComponent implements OnInit {
 
+  isAdmin: any;
+
   constructor(private almacenService: AlmacenService, public dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private util: UtilService) { }
 
   ngOnInit(): void {
     this.getAlmacenes();
+    this.isAdmin = this.util.isAdmin();
   }
 
   displayedColumns: string[] = ['idal', 'nombalm', 'direccion', 'encargado', 'foto','actions'];
